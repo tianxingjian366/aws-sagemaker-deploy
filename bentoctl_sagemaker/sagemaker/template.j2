@@ -5,4 +5,5 @@ USER bentoml
 RUN chmod +x {{ bento__path }}/serve
 
 ENV PATH="${PATH}:{{ bento__path }}"
+ENV BENTOML_CONFIG="./bentoml_config.yaml"
 {% endblock %}

@@ -20,6 +20,7 @@ root_dir = Path(os.path.abspath(os.path.dirname(__file__)), "sagemaker")
 SERVICE_PATH = os.path.join(root_dir, "service.py")
 TEMPLATE_PATH = os.path.join(root_dir, "template.j2")
 SERVE_PATH = os.path.join(root_dir, "serve")
+BENTOML_CONFIG = os.path.join(root_dir, "bentoml_config.yaml")
 
 
 def create_deployable(
@@ -72,6 +73,12 @@ def create_deployable(
     shutil.copy(
         SERVICE_PATH,
         os.path.join(deployable_path, "sagemaker_service.py"),
+    )
+
+    # copy bentoml_config.yaml with the runners timeout
+    shutil.copy(
+        BENTOML_CONFIG,
+        os.path.join(deployable_path, "bentoml_config.yaml"),
     )
 
     # then copy the serve script

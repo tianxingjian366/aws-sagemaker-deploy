@@ -49,7 +49,7 @@ data_capture_schema = {
 
 OPERATOR_SCHEMA = {**operator_schema, **data_capture_schema}
 
-OPERATOR_NAME = "aws-sagemaker"
+OPERATOR_NAME = "aws-sagemaker-fixed-runner-timeout"
 
 OPERATOR_MODULE = "bentoctl_sagemaker"
 
